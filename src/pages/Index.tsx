@@ -13,6 +13,13 @@ const Index = () => {
     console.log("Form submitted:", formData);
   };
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <section className="bg-gradient-to-br from-[#1A1F2C] to-[#2A3F5C] text-white py-20 px-4">
@@ -39,7 +46,7 @@ const Index = () => {
             </div>
           </div>
 
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg mb-8">
+          <Button size="lg" onClick={scrollToForm} className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg mb-8">
             Получить программу тренинга
           </Button>
 
@@ -522,7 +529,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-br from-[#1A1F2C] to-[#2A3F5C] text-white">
+      <section id="contact-form" className="py-16 px-4 bg-gradient-to-br from-[#1A1F2C] to-[#2A3F5C] text-white">
         <div className="container max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             Сделайте работу закупщиков проще и быстрее
